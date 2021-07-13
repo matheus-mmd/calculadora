@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="calc" name="calc" id="calc">
+        <input type="text" name="tela" id="tela">
+        <div class="teclas">
+            <div class="linha">
+                <input type="button" value="C" onclick="resetar()" class="resetar">
+                <input type="button" value="/" onclick="botao(value)">
+                <input type="button" value="*" onclick="botao(value)">
+            </div>
+            <div class="linha a">
+                <input type="button" value="7" onclick="botao(value)">
+                <input type="button" value="8" onclick="botao(value)">
+                <input type="button" value="9" onclick="botao(value)">
+                <input type="button" value="-" onclick="botao(value)">
+            </div>
+            <div class="linha">
+                <input type="button" value="4" onclick="botao(value)">
+                <input type="button" value="5" onclick="botao(value)">
+                <input type="button" value="6" onclick="botao(value)">
+                <input type="button" value="+" onclick="botao(value)">
+            </div>
+            <div class="linha">
+                <input type="button" value="1" onclick="botao(value)">
+                <input type="button" value="2" onclick="botao(value)">
+                <input type="button" value="3" onclick="botao(value)">
+                <input type="button" value="0" onclick="botao(value)">
+            </div>
+            <div class="linha">
+                <input type="button" value="00" onclick="botao(value)">
+                <input type="button" value="." onclick="botao(value)">
+                <input type="button" value="=" onclick="soma()" class="soma">
+            </div>
+        </div>
+    </form>
+    <script>
+        var valor
+        var result
+        function botao(num) {
+            valor = document.calc.tela.value += num
+        }
+
+        function resetar() {
+            document.calc.tela.value = ''
+        }
+
+        function soma() {
+            result = eval(valor)
+            document.calc.tela.value = result
+        }
+
+    </script>
+</body>
+
+</html>
